@@ -8,7 +8,7 @@ then prints valid input as 'Test name: ##'.
 """
 
 
-def score_input(test_name, test_score=0, invalid_message='Invalid test score, try again!'):
+def score_input(test_name, test_score=0, invalid_message="Invalid test score, try again!"):
     """
     Function that accepts params and returns a string
     :param test_name: The name of a test exam
@@ -20,11 +20,17 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :return: formatted string with test name and test score.
     :rtype: String
     """
-    if 0<= test_score <=100:
-        return "{}: {}".format(test_name, test_score)
-    else:
-        return(invalid_message)
+    try:
+        if 0<= test_score <=100:
+            return "{}: {}".format(test_name, test_score)
+        else:
+            return invalid_message
+    except TypeError:
+        raise TypeError
 
 
 if __name__ == '__main__':
-    print(score_input("test1", 85))
+    try:
+        print(score_input("test1", 85))
+    except TypeError:
+        print("Not a valid score")
