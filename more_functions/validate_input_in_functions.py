@@ -17,7 +17,7 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
     :return: formatted string with test name and test score.
     """
     # return { test_name: test_score}
-    pass
+    return "{}: {}".format(test_name, test_score)
 
 
 if __name__ == '__main__':
