@@ -19,7 +19,7 @@ class MyTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             val_input.score_input("Python5!", "Ninty")
 
-    def  test_score_input_invalid_message(self):
+    def test_score_input_invalid_message(self):
         self.assertEqual("Python6!: 90", val_input.score_input("Python6!", 90, "Not a valid score"))
 
 
